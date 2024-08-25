@@ -8,7 +8,7 @@ const Login = ({ setUser }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/api/login', { username, password });
+      const response = await axios.post('http://localhost:8080/api/login', { username, password });
       setUser(response.data);
     } catch (error) {
       console.error('Login failed', error);

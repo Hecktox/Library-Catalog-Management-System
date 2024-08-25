@@ -10,7 +10,7 @@ const Catalog = ({ type }) => {
     // Fetch items based on type
     const fetchItems = async () => {
       try {
-        const response = await axios.get(`/api/${type}`);
+        const response = await axios.get(`http://localhost:8080/api/${type}`);
         setItems(response.data);
       } catch (error) {
         console.error('Error fetching items', error);
@@ -21,7 +21,7 @@ const Catalog = ({ type }) => {
 
   const addItem = async () => {
     try {
-      await axios.post(`/api/${type}`, { name: newItem });
+      await axios.post(`http://localhost:8080/api/${type}`, { name: newItem });
       setItems([...items, { name: newItem }]);
       setNewItem('');
     } catch (error) {
