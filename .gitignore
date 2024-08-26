@@ -1,2 +1,2 @@
 # Ignore all JSON files within the database directory
-database/*.json
+/server/database/*.json
