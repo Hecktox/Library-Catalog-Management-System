@@ -3,86 +3,103 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-  }
-  
-  .catalog-table {
+}
+
+.catalog-table {
     border-collapse: collapse;
     width: 100%;
     max-width: 1000px;
     margin: 20px 0;
     text-align: left;
     border: 1px solid #ddd;
-  }
-  
-  .catalog-table th, .catalog-table td {
+}
+
+.catalog-table th, .catalog-table td {
     border: 1px solid #ddd;
     padding: 8px;
-  }
-  
-  .catalog-table th {
+}
+
+.catalog-table th {
     background-color: #f4f4f4;
     text-align: center;
-  }
-  
-  .catalog-table tr.catalog-row:hover {
+}
+
+.catalog-table tr.catalog-row:hover {
     background-color: #ddd;
-  }
-  
-  .catalog-table tr:nth-child(even) {
+}
+
+.catalog-table tr:nth-child(even) {
     background-color: #f9f9f9;
-  }
-  
-  .catalog-table input,
-  .catalog-table select {
-    margin: 10px 0;
+}
+
+.search-box {
+    padding: 12px;
+    width: 500px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-catalog-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.add-catalog-section input,
+.add-catalog-section select {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-  }
-  
-  .catalog-table select {
-    width: 200px;
-  }
-  
-  .catalog-table button {
+    margin-right: 10px;
+}
+
+.add-catalog-section button,
+.new-item-form button {
     padding: 8px 12px;
-    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
-    margin-left: 10px;
-  }
-  
-  .catalog-table button:hover {
+    border-radius: 4px;
+    background-color: #4CAF50;
+}
+
+.add-catalog-section button:hover,
+.new-item-form button:hover {
     background-color: #45a049;
-  }
-  
-  .new-item-form {
+}
+
+.edit-button {
+    background-color: #ffeb3b;
+    color: black;
+}
+
+.edit-button:hover {
+    background-color: #fdd835;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c62828;
+}
+
+.new-item-form {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
     margin-top: 20px;
-  }
-  
-  .new-item-form input,
-  .new-item-form select {
+}
+
+.new-item-form input,
+.new-item-form select {
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     width: 150px;
-  }
-  
-  .new-item-form button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  .new-item-form button:hover {
-    background-color: #45a049;
-  }
-  
+}

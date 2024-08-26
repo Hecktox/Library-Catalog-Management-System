@@ -131,19 +131,25 @@ app.post('/api/customers', (req, res) => {
   res.status(201).json(newCustomer);
 });
 
-app.put('/api/customers/:id', (req, res) => {
+app.put('/api/customers/:email', (req, res) => {
   const customers = loadJson('customers.json');
-  const { id } = req.params;
+  const { email } = req.params;
   const updatedCustomer = req.body;
-  customers[id] = updatedCustomer;
+  const customerIndex = customers.findIndex(c => c.email === email);
+
+  if (customerIndex === -1) {
+    return res.status(404).send('Customer not found');
+  }
+
+  customers[customerIndex] = updatedCustomer;
   saveJson('customers.json', customers);
   res.json(updatedCustomer);
 });
 
-app.delete('/api/customers/:id', (req, res) => {
+app.delete('/api/customers/:email', (req, res) => {
   let customers = loadJson('customers.json');
-  const { id } = req.params;
-  customers = customers.filter((_, index) => index !== parseInt(id));
+  const { email } = req.params;
+  customers = customers.filter(customer => customer.email !== email);
   saveJson('customers.json', customers);
   res.status(204).end();
 });
@@ -176,6 +182,12 @@ app.delete('/api/catalogs/:id', (req, res) => {
   catalogs = catalogs.filter((_, index) => index !== parseInt(id));
   saveJson('catalogs.json', catalogs);
   res.status(204).end();
+});
+
+app.get('/api/employees', (req, res) => {
+  const users = loadJson('users.json');
+  const employees = users.filter(user => user.role === 'employee');
+  res.json(employees);
 });
 
 app.listen(port, () => {
