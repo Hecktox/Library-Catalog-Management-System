@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Robert Brown",
+    "email": "robert.brown@example.com",
+    "borrowed": [
+      "978-3-16-148410-0",
+      "978-0-321-45678-9"
+    ]
+  },
+  {
+    "name": "Emily Davis",
+    "email": "emily.davis@example.com",
+    "borrowed": [
+      "978-1-23-456789-7"
+    ]
+  },
+  {
+    "name": "Michael Wilson",
+    "email": "michael.wilson@example.com",
+    "borrowed": [
+      "978-0-12-345678-9"
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Best Sellers",
+    "items": [
+      {
+        "type": "article",
+        "ISBN": "978-1-23-456789-7",
+        "category": "Science",
+        "title": "Physics Advances",
+        "author": "Albert Einstein",
+        "yearPublished": 1940
+      },
+      {
+        "type": "book",
+        "ISBN": "978-0-9876543-21",
+        "category": "Mystery",
+        "title": "The Silent Witness",
+        "author": "Agatha Christie",
+        "yearPublished": 1930
+      }
+    ]
+  },
+  {
+    "title": "New",
+    "items": [
+      {
+        "type": "book",
+        "ISBN": "978-3-16-148410-0",
+        "category": "Sports",
+        "title": "Basketball Adventure",
+        "author": "Micheal Jordan",
+        "yearPublished": 2021
+      }
+    ]
+  },
+  {
+    "title": "Classics",
+    "items": [
+      {
+        "type": "book",
+        "ISBN": "978-0-321-45678-9",
+        "category": "Classic",
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "yearPublished": 1813
+      }
+    ]
+  },
+  {
+    "title": "Research Papers",
+    "items": [
+      {
+        "type": "paper",
+        "ISBN": "978-0-12-345678-9",
+        "category": "Mathematics",
+        "title": "Advanced Calculus Techniques",
+        "author": "Alan Turing",
+        "yearPublished": 1952
+      }
+    ]
+  }
+]

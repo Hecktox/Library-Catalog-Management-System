@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Maximus Taube",
+    "username": "max",
+    "password": "password",
+    "role": "owner"
+  },
+  {
+    "name": "MoznaPOS",
+    "username": "MoznaPOS",
+    "password": "password",
+    "role": "employee"
+  }
+]
