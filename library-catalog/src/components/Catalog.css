@@ -1,105 +1,215 @@
-.catalog-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+.catalog {
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.catalog-table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 1000px;
-    margin: 20px 0;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-.catalog-table th, .catalog-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-.catalog-table th {
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.catalog-table tr.catalog-row:hover {
-    background-color: #ddd;
-}
-
-.catalog-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+.back-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .search-box {
-    padding: 12px;
-    width: 500px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .add-catalog-section {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.add-catalog-section input,
-.add-catalog-section select {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
+.catalog-title-input {
+  width: 200px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.add-catalog-section button,
-.new-item-form button {
-    padding: 8px 12px;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    background-color: #4CAF50;
+.add-catalog-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 
-.add-catalog-section button:hover,
-.new-item-form button:hover {
-    background-color: #45a049;
+.add-catalog-button:hover {
+  background-color: #218838;
+}
+
+.cancel-edit-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.cancel-edit-button:hover {
+  background-color: #c82333;
 }
 
 .edit-button {
-    background-color: #ffeb3b;
-    color: black;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 
 .edit-button:hover {
-    background-color: #fdd835;
+  background-color: #e0a800;
 }
 
 .delete-button {
-    background-color: #f44336;
-    color: white;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 
 .delete-button:hover {
-    background-color: #c62828;
+  background-color: #c82333;
 }
 
-.new-item-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
-    margin-top: 20px;
+.checkout-button {
+  color: #ffffff;
+  background-color: #00796b;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
 }
 
-.new-item-form input,
-.new-item-form select {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 150px;
+.checkout-button:hover {
+  background-color: #004d40;
+}
+
+.edit-item-button {
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.edit-item-button:hover {
+  background-color: #e0a800;
+}
+
+.delete-item-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.delete-item-button:hover {
+  background-color: #c82333;
+}
+
+.save-edit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.save-edit-button:hover {
+  background-color: #218838;
+}
+
+.catalog-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.catalog-table th,
+.catalog-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.catalog-row {
+  background-color: #f9f9f9;
+}
+
+.catalog-items-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.catalog-items-table th,
+.catalog-items-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.item-input {
+  width: 150px;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.item-type-dropdown,
+.item-year-dropdown {
+  width: 150px;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-item-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.add-item-button:hover {
+  background-color: #218838;
+}
+
+.edit-item-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }

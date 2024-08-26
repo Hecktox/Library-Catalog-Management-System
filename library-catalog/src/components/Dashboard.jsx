@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import './Dashboard.css';
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import "./Dashboard.css";
 
 const Dashboard = ({ user }) => {
   return (
     <div className="dashboard">
-      <h1>Welcome, {user.name}!</h1>
+      <h1 className="dashboard-title">Welcome, {user.name}!</h1>
       <div className="button-container">
         <Link to="/catalog">
           <button className="dashboard-button">Catalog</button>

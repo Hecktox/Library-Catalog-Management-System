@@ -1,17 +1,19 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Employees.css';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./Employees.css";
 
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/employees');
+        const response = await axios.get("http://localhost:8080/api/employees");
         setEmployees(response.data);
       } catch (error) {
-        console.error('Error fetching employees:', error);
+        console.error("Error fetching employees:", error);
       }
     };
 
@@ -19,9 +21,12 @@ const Employees = () => {
   }, []);
 
   return (
-    <div className="employees">
-      <h1>Employees List</h1>
-      <table>
+    <div className="employees-container">
+      <h1 className="employees-title">Employees List</h1>
+      <button className="back-button" onClick={() => navigate("/")}>
+        Back to Dashboard
+      </button>
+      <table className="employees-table">
         <thead>
           <tr>
             <th>Name</th>

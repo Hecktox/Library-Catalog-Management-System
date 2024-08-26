@@ -1,28 +1,32 @@
-import { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import './Signup.css';
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import "./Signup.css";
 
 const SignUp = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSignUp = async () => {
-    setError('');
+    setError("");
     try {
-      await axios.post('http://localhost:8080/api/sign-up', { username, password, name });
-      alert('Sign Up Successful');
-      navigate('/');
+      await axios.post("http://localhost:8080/api/sign-up", {
+        username,
+        password,
+        name,
+      });
+      alert("Sign Up Successful");
+      navigate("/");
     } catch (error) {
-      setError(error.response ? error.response.data : 'Sign Up failed');
+      setError(error.response ? error.response.data : "Sign Up failed");
     }
   };
 
   const handleBackToLogin = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -50,8 +54,12 @@ const SignUp = () => {
           placeholder="Name"
           className="signup-input"
         />
-        <button onClick={handleSignUp} className="signup-button">Sign Up</button>
-        <button onClick={handleBackToLogin} className="back-to-login-button">Back to Login</button>
+        <button onClick={handleSignUp} className="signup-button">
+          Sign Up
+        </button>
+        <button onClick={handleBackToLogin} className="back-to-login-button">
+          Back to Login
+        </button>
         {error && <p className="error-message">{error}</p>}
       </div>
     </div>
