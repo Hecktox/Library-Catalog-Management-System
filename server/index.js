@@ -110,12 +110,60 @@ app.get('/api/test', (req, res) => {
 app.post('/api/login', (req, res) => {
   const { username, password } = req.body;
   const users = loadJson('users.json');
-  const user = users.find(u => u.username === username && u.password === password);
-  if (user) {
-    res.json(user);
-  } else {
-    res.status(401).send('Invalid credentials');
+
+  if (!username) {
+    return res.status(400).send('You can’t leave username blank');
   }
+
+  if (!password) {
+    return res.status(400).send('You can’t leave password blank');
+  }
+
+  const user = users.find(u => u.username === username);
+
+  if (!user) {
+    return res.status(404).send('User does not exist');
+  }
+
+  if (user.password !== password) {
+    return res.status(401).send('Password incorrect');
+  }
+
+  res.json(user);
+});
+
+app.post('/api/sign-up', (req, res) => {
+  const { username, password, name } = req.body;
+  const users = loadJson('users.json');
+
+  if (!username) {
+    return res.status(400).send('You can’t leave username blank');
+  }
+
+  if (!password) {
+    return res.status(400).send('You can’t leave password blank');
+  }
+
+  if (!name) {
+    return res.status(400).send('You can’t leave name blank');
+  }
+
+  if (users.find(u => u.username === username)) {
+    return res.status(400).send('Username already taken');
+  }
+
+  if (!/^[a-zA-Z0-9]+$/.test(username)) {
+    return res.status(400).send('Username can only include alphanumeric characters');
+  }
+
+  if (password.length < 8) {
+    return res.status(400).send('Password must contain at least 8 characters');
+  }
+
+  const newUser = { name, username, password, role: 'employee' };
+  users.push(newUser);
+  saveJson('users.json', users);
+  res.status(201).json(newUser);
 });
 
 app.get('/api/customers', (req, res) => {

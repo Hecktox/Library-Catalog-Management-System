@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
+import SignUp from './components/SignUp';
 import Catalog from './components/Catalog';
 import Dashboard from './components/Dashboard';
 import Employees from './components/Employees';
@@ -33,6 +34,7 @@ function App() {
         {message && <p>{message}</p>}
         <Routes>
           <Route path="/" element={user ? <Dashboard user={user} /> : <Login setUser={setUser} />} />
+          <Route path="/signup" element={<SignUp setUser={setUser} />} /> {}
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/employees" element={<Employees />} />
           <Route path="/checkout" element={<Checkout />} />
